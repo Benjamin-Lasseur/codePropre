@@ -4,15 +4,16 @@ public class ZooApplication {
 
 	public static void main(String[] args) {
 		Zoo zoo = new Zoo("Thoiry");
-		
-		zoo.addAnimal("Gazelle", "MAMMIFERE", "HERBIVORE");
-		zoo.addAnimal("Zèbre", "MAMIFERE", "HERBIVORE");
-		zoo.addAnimal("Lion", "MAMMIFERE", "HERBIVORE");
-		zoo.addAnimal("Panthère", "MAMMIFERE", "CARNIVORE");
-		zoo.addAnimal("Requin blanc", "POISSON", "HERBIVORE");
-		zoo.addAnimal("Truite dorée", "POISSON", "HERBIVORE");
-		zoo.addAnimal("Boa constrictor", "SERPENT", "CARNIVORE");
-		zoo.addAnimal("Python", "SERPENT", "CARNIVORE");
+
+		zoo.addAnimal(new Mammifere("Zèbre", new Herbivore(), ZoneZoo.SAVANE_AFRICAINE));
+		zoo.addAnimal(new Mammifere("Lion", new Carnivore(), ZoneZoo.SAVANE_AFRICAINE));
+		zoo.addAnimal(new Mammifere("Panthère", new Carnivore(), ZoneZoo.SAVANE_AFRICAINE));
+		zoo.addAnimal(new Poisson("Requin blanc", new Carnivore(), ZoneZoo.AQUARIUM));
+		zoo.addAnimal(new Poisson("Truite dorée", new Herbivore(), ZoneZoo.AQUARIUM));
+		zoo.addAnimal(new Reptile("Boa constrictor", new Carnivore(), ZoneZoo.FERME_REPTILE));
+		zoo.addAnimal(new Reptile("Python", new Carnivore(), ZoneZoo.FERME_REPTILE));
+
+		zoo.afficherListeAnimaux();
 	}
 
 }
