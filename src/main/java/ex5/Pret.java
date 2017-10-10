@@ -4,13 +4,26 @@ import java.util.Date;
 
 public class Pret {
 
+	/** strategy : Strategy */
 	private Strategy strategy;
+	/** capital : double */
 	private double capital;
+	/** capitalRestantDu : double */
 	private double capitalRestantDu;
+	/** taux : double */
 	private double taux;
+	/** dateDebut : Date */
 	private Date dateDebut;
+	/** dateFin : Date */
 	private Date dateFin;
 
+	/**
+	 * Construteur
+	 * 
+	 * @param capital
+	 * @param taux
+	 * @param dateDebut
+	 */
 	public Pret(double capital, double taux, Date dateDebut) {
 		super();
 		this.strategy = new PretATerme();
@@ -19,11 +32,28 @@ public class Pret {
 		this.dateDebut = dateDebut;
 	}
 
+	/**
+	 * Constructeur
+	 * 
+	 * @param capital
+	 * @param taux
+	 * @param dateDebut
+	 * @param dateFin
+	 */
 	public Pret(double capital, double taux, Date dateDebut, Date dateFin) {
 		this(capital, taux, dateDebut);
 		this.dateFin = dateFin;
 	}
 
+	/**
+	 * Constructeur
+	 * 
+	 * @param capital
+	 * @param taux
+	 * @param dateDebut
+	 * @param dateFin
+	 * @param capitalRestantDu
+	 */
 	public Pret(double capital, double taux, Date dateDebut, Date dateFin, double capitalRestantDu) {
 		this(capital, taux, dateDebut, dateFin);
 		this.capitalRestantDu = capitalRestantDu;

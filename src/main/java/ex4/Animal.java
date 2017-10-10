@@ -2,16 +2,27 @@ package ex4;
 
 public class Animal {
 
+	/** nom : String */
 	protected String nom;
+	/** comportement : Comportement */
 	protected Comportement comportement;
+	/** zone : ZoneZoo */
 	protected ZoneZoo zone;
 
+	/**Constructeur
+	 * @param nom
+	 * @param comportement
+	 * @param zone
+	 */
 	public Animal(String nom, Comportement comportement, ZoneZoo zone) {
 		this.nom = nom;
 		this.comportement = comportement;
 		this.zone = zone;
 	}
 
+	/* Méthode toString donnant le nom, la zone et le comportement
+	 * 
+	 */
 	@Override
 	public String toString() {
 		StringBuilder str = new StringBuilder(nom).append(" | ").append(zone.getNom()).append(" | ")

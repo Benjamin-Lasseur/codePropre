@@ -2,16 +2,27 @@ package ex6;
 
 public class Conteneur {
 
+	/** canWrite : boolean */
 	private boolean canWrite;
 
+	/** elements : Object[] */
 	private Object[] elements;
+	/** size : int */
 	private int size;
 
+	/**
+	 * Constructeur
+	 */
 	public Conteneur() {
 		this.size = 0;
 		this.canWrite = true;
 	}
 
+	/**
+	 * Constructeur
+	 * 
+	 * @param objects
+	 */
 	public Conteneur(Object... objects) {
 		this();
 		for (Object o : objects) {
@@ -19,6 +30,11 @@ public class Conteneur {
 		}
 	}
 
+	/**
+	 * Ajoute un element au tableau si possible et l'agrandit si nécessaire
+	 * 
+	 * @param element
+	 */
 	public void add(Object element) {
 		if (canWrite) {
 			agrandirTableau();
@@ -27,6 +43,9 @@ public class Conteneur {
 
 	}
 
+	/**
+	 * Agrandit le tableau
+	 */
 	private void agrandirTableau() {
 		int newSize = size + 1;
 		if (newSize > size) {
@@ -38,6 +57,11 @@ public class Conteneur {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		for (Object o : elements) {
@@ -48,11 +72,4 @@ public class Conteneur {
 		return str.toString();
 	}
 
-	public Object getContent(int i) {
-		return elements[i];
-	}
-
-	public int getSize() {
-		return size;
-	}
 }
